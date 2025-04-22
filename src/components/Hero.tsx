@@ -73,7 +73,7 @@ export const Hero: React.FC = () => {
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 shadow-xl flex items-center justify-center animate-float">
               <div className="absolute inset-2 bg-white dark:bg-gray-800 rounded-full overflow-hidden">
                 <img
-                  src="/images/candid.png"
+                  src="/candid.png"
                   alt="Profile"
                   className="w-full h-full object-cover"
                 />

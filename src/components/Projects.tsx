@@ -108,7 +108,7 @@ export const Projects: React.FC = () => {
       title: "SlugLabs",
       description:
         "A web app that helps UCSC students find and apply to research labs that interest them.",
-      image: "images/sluglabs.png",
+      image: "/sluglabs.png",
       tags: ["Figma", "UI/UX", "Design System"],
       repoUrl:
         "https://github.com/LabConnectSlugAI/LabConnect/tree/main/labconnect",
