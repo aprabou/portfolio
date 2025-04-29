@@ -60,7 +60,7 @@ export const Hero: React.FC = () => {
                   href="https://linkedin.com/in/ashwinprabou"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors duration-300"
+                  className="text-blue-700 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-400 transition-colors duration-300"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="h-5 w-5" />
