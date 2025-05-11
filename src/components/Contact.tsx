@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { SectionTitle } from "./common/SectionTitle";
+import emailjs from "emailjs-com";
 import {
   Mail,
   Phone,
@@ -69,15 +70,27 @@ export const Contact: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (validateForm()) {
       setIsSubmitting(true);
 
-      // Simulate form submission
-      setTimeout(() => {
-        setIsSubmitting(false);
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      };
+
+      try {
+        // Send email using EmailJS
+        await emailjs.send(
+          "service_jt0pw6r", // Replace with your EmailJS service ID
+          "template_xr845gd", // Replace with your EmailJS template ID
+          templateParams,
+          "QfMJg0zXqziQ9sfc1" // Replace with your EmailJS user ID
+        );
+
         setSubmitMessage({
           type: "success",
           text: "Your message has been sent successfully! I will get back to you soon.",
@@ -90,7 +103,15 @@ export const Contact: React.FC = () => {
         setTimeout(() => {
           setSubmitMessage(null);
         }, 5000);
-      }, 1500);
+      } catch (error) {
+        console.error("Failed to send message:", error);
+        setSubmitMessage({
+          type: "error",
+          text: "Failed to send your message. Please try again later.",
+        });
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -129,7 +150,7 @@ export const Contact: React.FC = () => {
     {
       icon: <Globe className="h-5 w-5" />,
       name: "Website",
-      url: "https://example.com",
+      url: "https://ashwinprabou.tech",
     },
   ];
 

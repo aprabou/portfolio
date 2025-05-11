@@ -39,10 +39,11 @@ export const Hero: React.FC = () => {
                   View Projects <ArrowDown className="h-4 w-4" />
                 </a>
                 <a
-                  href="#"
+                  href="/Ashwin_Prabou_Resume_Portfolio.pdf" // Replace with the actual path to your file
+                  download="Ashwin_Prabou_Resume_Portfolio.pdf" // Optional: Specify the downloaded file name
                   className="px-6 py-3 border border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-md transition-colors duration-300 font-medium flex items-center gap-2"
                 >
-                  Download CV <FileText className="h-4 w-4" />
+                  Download Resume <FileText className="h-4 w-4" />
                 </a>
               </div>
 
