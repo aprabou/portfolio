@@ -62,41 +62,16 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
 export const Experience: React.FC = () => {
   const experiences = [
     {
-      title: "Senior Software Engineer",
-      company: "Tech Innovations Inc.",
-      location: "San Francisco, CA",
-      period: "Jan 2022 - Present",
+      title: "Software Development Engineer Intern",
+      company: "Perfint Healthcare",
+      location: "Remote",
+      period: "Jan 2025 - Present",
       description: [
-        "Lead a team of 5 developers to build and maintain a scalable SaaS platform serving 50,000+ users.",
-        "Architected and implemented a microservices infrastructure that reduced system downtime by 75%.",
-        "Introduced automated testing and CI/CD pipelines, improving deployment efficiency by 60%.",
-        "Collaborated with product and design teams to define and implement new features based on user feedback.",
+        "Engineered a C++ shortest-path routing algorithm for MAXIO®, enhancing instrument-path accuracy by 15% and accelerating pre-operative planning 3x, enabling faster, more precise CT-guided interventions",
+        "Integrated the new algorithm into MAXIO®’s software pipeline—synchronizing with respiratory gating and multi-series image registration—to provide reliable, real-time intraoperative guidance",
+        "Collaborated in agile sprints with clinical engineers and software teams, leading weekly demos and code reviews to refine requirements and fast-track validation against regulatory standards",
       ],
       isActive: true,
-    },
-    {
-      title: "Software Engineer",
-      company: "DataViz Solutions",
-      location: "Austin, TX",
-      period: "Jun 2019 - Dec 2021",
-      description: [
-        "Developed responsive web applications using React, TypeScript, and Node.js.",
-        "Built RESTful APIs that handled 1M+ daily requests with 99.9% uptime.",
-        "Optimized database queries, resulting in a 40% reduction in load times.",
-        "Participated in agile development cycles with bi-weekly sprints and regular releases.",
-      ],
-    },
-    {
-      title: "Junior Developer",
-      company: "StartUp Nexus",
-      location: "Remote",
-      period: "Sep 2017 - May 2019",
-      description: [
-        "Created responsive front-end interfaces using HTML, CSS, and JavaScript.",
-        "Assisted in the development of a mobile app that achieved 100,000+ downloads.",
-        "Collaborated with UX designers to implement intuitive user interfaces.",
-        "Participated in code reviews and documentation of development processes.",
-      ],
     },
   ];
 
@@ -105,10 +80,23 @@ export const Experience: React.FC = () => {
       id="experience"
       className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle>
-          Work Experience Coming Soon... (Open to work!)
-        </SectionTitle>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <SectionTitle>Work Experience</SectionTitle>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {experiences.map((experience, index) => (
+              <ExperienceItem
+                key={index}
+                title={experience.title}
+                company={experience.company}
+                location={experience.location}
+                period={experience.period}
+                description={experience.description}
+                isActive={experience.isActive}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
